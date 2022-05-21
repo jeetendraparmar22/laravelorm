@@ -21,4 +21,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/displayName', [TestController::class, 'displayName']);
 Route::post('/addUser', [TestController::class, 'addUser']);
 Route::post('/addPost', [TestController::class, 'addPost']);
-Route::post('/myname', [TestController::class, 'manageNAMe']);
