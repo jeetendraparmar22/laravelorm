@@ -19,7 +19,7 @@ class TestController extends Controller
 
         return response()->json([
             "success" => "User has been added",
-            "error" => "Error to add user",
+
         ]);
     }
     public function addPost(Request $request)
