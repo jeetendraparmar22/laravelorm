@@ -47,9 +47,22 @@ class TestController extends Controller
 
     public function getPostWithComment(Request $request)
     {
+        $post = Post::find(1);
         $comments = Post::find(1)->comments;
+        foreach ($comments as $comment) {
+            $commentToShow = $comment->comment_description;
+        }
+        // exit;
         return response()->json([
-            "comments" => $comments,
-        ]);
+            "data" => [
+                "id" => $post->id,
+                "post_title" => $post->post_title,
+                "comments" => [
+                    "comment_descrption" => $commentToShow,
+
+                ],
+            ],
+
+        ], 200);
     }
 }
